@@ -5,6 +5,7 @@ import { AuthContextProvider } from './contextApi/AuthContext';
 import Account from "./pages/Account";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
+import PrivateRoute from "./components/PrivateRoute";
 
 function App() {
   return (
@@ -13,7 +14,13 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/account" element={<Account />} />
+        <Route 
+          path="/account" 
+          element={
+            <PrivateRoute>
+              <Account />
+            </PrivateRoute>} 
+        />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
 

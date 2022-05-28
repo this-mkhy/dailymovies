@@ -5,6 +5,7 @@ import { UserAuth } from '../contextApi/AuthContext';
 function Navbar() {
   const { user, logOut } = UserAuth();
   // console.log(user.email)
+  // console.log(user.displayName)
 
   const navigate = useNavigate();
  

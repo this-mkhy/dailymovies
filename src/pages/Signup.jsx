@@ -4,10 +4,11 @@ import { Link, useNavigate } from 'react-router-dom'
 import { UserAuth } from '../contextApi/AuthContext';
 
 const Signup = () => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
     const { user, signUp } = UserAuth();
-    const navigate = useNavigate()
+    const navigate = useNavigate();
   
     const handleSubmit = async (ev) => {
       ev.preventDefault();
@@ -33,6 +34,13 @@ const Signup = () => {
             <div className='max-w-[320px] mx-auto py-16'>
               <h1 className='text-3xl font-bold'>Sign Up</h1>
               <form className='w-full flex flex-col py-4' onSubmit={handleSubmit}>
+                <input
+                    onChange={(ev) => setName(ev.target.value)}
+                    className='p-3 my-2 bg-gray-700 rouded'
+                    type='text'
+                    placeholder='Your name'
+                    autoComplete='name'
+                />
                 <input
                     onChange={(ev) => setEmail(ev.target.value)}
                     className='p-3 my-2 bg-gray-700 rouded'
